@@ -43,6 +43,7 @@ const SignatureView = forwardRef(
       clearText = "Clear",
       confirmText = "Confirm",
       customHtml = null,
+      data = "[]",
       dataURL = "",
       descriptionText = "Sign above",
       dotSize = null,
@@ -94,6 +95,7 @@ const SignatureView = forwardRef(
         imageType
       );
       injectedJavaScript = injectedJavaScript.replace(/<%dataURL%>/g, dataURL);
+      injectedJavaScript = injectedJavaScript.replace(/<%data%>/g, data);
       injectedJavaScript = injectedJavaScript.replace(
         /<%penColor%>/g,
         penColor
@@ -137,6 +139,7 @@ const SignatureView = forwardRef(
       confirmText,
       clearText,
       dataURL,
+      data,
       bgSrc,
       bgWidth,
       bgHeight,

@@ -183,8 +183,13 @@ export default `
     var trimWhitespace = <%trimWhitespace%>;
 
     var dataURL = '<%dataURL%>';
+    var data = <%data%>;
 
-    if (dataURL) signaturePad.fromDataURL(dataURL);
+    if (data.length) {
+        signaturePad.fromData(data);
+    } else if (dataURL) {
+        signaturePad.fromDataURL(dataURL);
+    }
 
     clearButton.addEventListener("click", clearSignature );
 
